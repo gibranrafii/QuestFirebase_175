@@ -3,7 +3,7 @@ package com.example.myfirebase.repositori
 
 import android.app.Application
 
-interface ContainteApp {
+interface ContainerApp {
     val repositorySiswa: RepositorySiswa
 }
 
