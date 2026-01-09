@@ -8,6 +8,8 @@ import kotlinx.coroutines.tasks.await
 interface RepositorySiswa {
     suspend fun getDataSiswa(): List<Siswa>
     suspend fun postDataSiswa(siswa: Siswa)
+    suspend fun getSatuSiswa(id: Long): Siswa?
+
 }
 
 class FirebaseRepositorySiswa : RepositorySiswa {
