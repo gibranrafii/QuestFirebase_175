@@ -40,4 +40,15 @@ RepositorySiswa
             nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
         }
     }
+    suspend fun editSatuSiswa(){
+        if (validasiInput(uiStateSiswa.detailsSiswa)){
+            try {
+                repositorySiswa.editSatuSiswa(idSiswa,uiStateSiswa.detailsSiswa.toDataSiswa
+                    ())
+                println("Update Sukses: $idSiswa")
+            } catch (e: Exception) {
+                println("Update Error: ${e.message}")
+            }
+        }
+    }
 }
