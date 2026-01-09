@@ -44,7 +44,12 @@ fun HostNavigasi(
                 navArgument(DestinasiDetail.itemIdArg) { type = NavType.StringType }
             )
         ) {
-
+            DetailSiswaScreen(
+                navigateToEditItem = { id ->
+                    navController.navigate("${DestinasiEdit.route}/$id")
+                },
+                navigateBack = { navController.navigate(DestinasiHome.route) }
+            )
         }
     }
 }
