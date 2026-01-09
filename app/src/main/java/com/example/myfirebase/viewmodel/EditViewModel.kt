@@ -30,4 +30,14 @@ RepositorySiswa
                 .toUiStateSiswa(true)
         }
     }
+    fun updateUiState(detailSiswa: DetailsSiswa) {
+        uiStateSiswa =
+            UIStateSiswa(detailsSiswa = detailSiswa, isEntryValid = validasiInput
+                (detailSiswa))
+    }
+    private fun validasiInput(uiState: DetailsSiswa = uiStateSiswa.detailsSiswa ): Boolean {
+        return with(uiState) {
+            nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
+        }
+    }
 }
