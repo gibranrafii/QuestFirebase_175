@@ -46,4 +46,12 @@ RepositorySiswa
             }
         }
     }
+    suspend fun hapusSatuSiswa() {
+        try {
+            repositorySiswa.hapusSatuSiswa(idSiswa)
+            println("Sukses Hapus Data: $idSiswa")
+        } catch (e: Exception) {
+            println("Gagal Hapus Data: ${e.message}")
+        }
+    }
 }
